@@ -1,3 +1,6 @@
+#VS-Code & Mac Binaries
+.DS_Store
+.vscode/
 # Prerequisites
 *.d
 
