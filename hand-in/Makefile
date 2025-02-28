@@ -20,7 +20,7 @@ $(CLEANED): $(INPUT)
 # Step 2: Remove stop words
 # Stop words are (is|the|in|but|can|a|the|is|in|of|to|a|that|it|for|on|with|as|this|was|at|by|an|be|from|or|are)
 $(STOPPED) : $(CLEANED)
-	awk -f killstopXXX.awk $< > $@
+	gawk -f killstopXXX.awk $< > $@
 
 
 # Step 3: Report frequency of words
@@ -30,7 +30,7 @@ $(FREQS): $(STOPPED)
 
 # Step 4: Extract Top 10 most frequent words
 $(TOP_WORDS): $(FREQS)
-	awk '$$2 && NR <=10 {print $$2}' $< > $@
+	gawk '$$2 && NR <=10 {print $$2}' $< > $@
 
 
 # Step 5: Generate table of word frequencies per paragraph
