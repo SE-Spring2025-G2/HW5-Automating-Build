@@ -8,7 +8,7 @@
         gsub(/[[:punct:]]/, "", clean_word)
         
         # Check if the word is in the excluded list
-        if (!(clean_word ~ /^(is|the|in|but|can|a|the|is|in|of|to|a|that|it|for|on|with|as|this|was|at|by|an|be|from|or|are)$/)) {
+        if (!(clean_word ~ /^(is|the|in|but|can|a|the|is|in|of|to|a|that|it|for|on|with|as|this|was|at|by|an|be|from|or|are|and)$/)) {
             # If not in the list, print the original word (with punctuation)
             printf "%s ", $i
         }
